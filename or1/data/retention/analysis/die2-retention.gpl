@@ -1,0 +1,14 @@
+set output 'die2-retention.png'
+set terminal png
+set xrange [425:175] reverse
+set xlabel 'Retention Voltage (mV)'
+set ylabel 'Bit Errors' 
+set style line 1 lt 1 lc rgb "#A00000" lw 2 pt 7 ps 1.5
+set style line 2 lt 1 lc rgb "#00A000" lw 2 pt 11 ps 1.5
+set style line 3 lt 1 lc rgb "#5060D0" lw 2 pt 9 ps 1.5
+set style line 4 lt 1 lc rgb "#0000A0" lw 2 pt 8 ps 1.5
+set style line 5 lt 1 lc rgb "#D0D000" lw 2 pt 13 ps 1.5
+set style line 6 lt 1 lc rgb "#00D0D0" lw 2 pt 12 ps 1.5
+set style line 7 lt 1 lc rgb "#B200B2" lw 2 pt 5 ps 1.5
+plot 'die2-retention.dat' using 1:2 w lp ls 1 ti 'Chilled', 'die2-retention.dat' using 1:3 w lp ls 2 ti 'Ambient', 'die2-retention.dat' using 1:4 w lp ls 2 ti 'Hot'
+
